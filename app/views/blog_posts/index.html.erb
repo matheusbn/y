@@ -1,6 +1,11 @@
-<h1>eai mlk doido</h1>
+<h1>Posts</h1>
 <% @blog_posts.each do |blog_post| %>
-  <div>
+  <div class="flex items-center justify-between">
     <h1><%= link_to blog_post.title, blog_post %></h1>
+    <% if blog_post.draft? %>
+      <div class="p-2 px-3 text-xs font-mono font-black rounded-full bg-gray-200">Draft</div>
+    <% elsif blog_post.scheduled? %>
+      <div class="p-2 px-3 text-xs font-mono font-bold rounded-full bg-blue-200">Scheduled</div>
+    <% end %>
   </div>
 <% end %>
