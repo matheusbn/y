@@ -2,31 +2,81 @@
 @tailwind components;
 @tailwind utilities;
 
+@import 'actiontext.css';
 
 
 @layer components {
 
   .btn-primary {
-    @apply py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-gray-600 text-white hover:bg-gray-700 disabled:opacity-50 disabled:pointer-events-none;
+    @apply py-2 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-md border border-transparent bg-gray-600 text-white hover:bg-gray-700 disabled:opacity-50 disabled:pointer-events-none;
   }
 
   .btn-outline {
-    @apply py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-gray-200 text-gray-500 hover:border-gray-600 hover:text-gray-600 disabled:opacity-50 disabled:pointer-events-none dark:border-neutral-700 dark:text-neutral-400 dark:hover:text-gray-500 dark:hover:border-gray-600;
+    @apply py-2 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-md border border-gray-200 text-gray-500 hover:border-gray-600 hover:text-gray-600 disabled:opacity-50 disabled:pointer-events-none dark:border-neutral-700 dark:text-neutral-400 dark:hover:text-gray-500 dark:hover:border-gray-600;
   }
 
   .btn-ghost {
-    @apply py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-gray-600 hover:bg-gray-100 hover:text-gray-800 disabled:opacity-50 disabled:pointer-events-none dark:text-gray-500 dark:hover:bg-gray-800/30 dark:hover:text-gray-400;
+    @apply py-2 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-md border border-transparent text-gray-600 hover:bg-gray-100 hover:text-gray-800 disabled:opacity-50 disabled:pointer-events-none dark:text-gray-500 dark:hover:bg-gray-800/30 dark:hover:text-gray-400;
   }
 
   .btn-soft {
-    @apply py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-gray-100 text-gray-800 hover:bg-gray-200 disabled:opacity-50 disabled:pointer-events-none dark:hover:bg-gray-900 dark:text-gray-400;
+    @apply py-2 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-md border border-transparent bg-gray-100 text-gray-800 hover:bg-gray-200 disabled:opacity-50 disabled:pointer-events-none dark:hover:bg-gray-900 dark:text-gray-400;
   }
 
   .btn-white {
-    @apply py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800;
+    @apply py-2 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800;
   }
 
   .btn-link {
-    @apply py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-gray-600 hover:text-gray-800 disabled:opacity-50 disabled:pointer-events-none dark:text-gray-500 dark:hover:text-gray-400;
+    @apply py-2 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-md border border-transparent text-gray-600 hover:text-gray-800 disabled:opacity-50 disabled:pointer-events-none dark:text-gray-500 dark:hover:text-gray-400;
+  }
+
+  .checkbox {
+    @apply w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600
+  }
+
+  #flash {
+    @apply fixed z-50 top-0 left-0 right-0 p-4 text-center;
+  }
+
+  #error_explanation {
+    @apply p-4 bg-red-100 text-red-800 mb-6;
+
+    h2 {
+      @apply font-bold
+    }
+
+    ul {
+      @apply list-disc list-inside
+    }
+  }
+}
+
+.pagy {
+  @apply flex space-x-1 font-semibold text-sm text-gray-500;
+
+  a:not(.gap) {
+    @apply block rounded-lg px-3 py-1 bg-gray-200;
+
+    &:hover {
+      @apply bg-gray-300;
+    }
+
+    &:not([href]) {
+      /* disabled links */
+      @apply text-gray-300 bg-gray-100 cursor-default;
+    }
+
+    &.current {
+      @apply text-white bg-gray-400;
+    }
+  }
+
+  label {
+    @apply inline-block whitespace-nowrap bg-gray-200 rounded-lg px-3 py-0.5;
+
+    input {
+      @apply bg-gray-100 border-none rounded-md;
+    }
   }
 }

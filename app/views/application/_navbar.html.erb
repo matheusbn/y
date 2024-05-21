@@ -1,0 +1,19 @@
+<!-- component -->
+<nav class="flex fixed text-center justify-between h-14 px-6 bg-white shadow w-full items-center">
+  <div class="mb-2 mb-0">
+    <a href="#" class="text-2xl no-underline text-grey-darkest hover:text-blue-dark">Home</a>
+  </div>
+  <div class="flex items-center space-x-5">
+    <% if user_signed_in? %>
+      <%= link_to "Novo post", new_blog_post_path, class: "text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2" %>
+      <%# <%= link_to "Perfil", edit_user_registration_path, class: "text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2" %>
+      <%= button_to "Sair", destroy_user_session_path, method: :delete, class: "text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2" %>
+    <% else %>
+      <%= link_to "Entrar", new_user_session_path, class: "text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2" %>
+      <%# <div class="h-1 w-1 mx-5 rounded-full bg-black"></div> %>
+      <%# <%= link_to "Perfil", edit_user_registration_path, class: "text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2" %>
+      <%= link_to "Criar Conta", new_user_registration_path, class: "text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2" %>
+    <% end %>
+  </div>
+</nav>
+<div class="h-14"></div>
