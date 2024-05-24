@@ -8,11 +8,11 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-user = User.where(email: "132math@gmail.com").first_or_initialize
-user.update!({
-  password: "abc123",
-  password_confirmation: "abc123"
-})
+# therapist = Therapist.where(email: "132math@gmail.com").first_or_initialize
+# therapist.update!({
+#   password: "abc123",
+#   password_confirmation: "abc123"
+# })
 
 100.times do |i|
   blog_post = BlogPost.where(title: "Blog Post #{i}").first_or_initialize
