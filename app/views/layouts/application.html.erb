@@ -12,8 +12,12 @@
   </head>
   <body>
     <%= render "navbar" %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% if notice.present? %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+    <% if alert.present? %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
     <%# <%= render partial: "form", locals: {blog_post: @blog_post} %>
     <%= yield %>
   </body>

@@ -35,22 +35,32 @@
     @apply w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600
   }
 
-  #flash {
-    @apply fixed z-50 top-0 left-0 right-0 p-4 text-center;
+}
+
+#flash {
+  @apply fixed z-50 top-0 left-0 right-0 p-4 text-center;
+}
+
+#error_explanation {
+  @apply p-4 bg-red-100 text-red-800 mb-6;
+
+  h2 {
+    @apply font-bold
   }
 
-  #error_explanation {
-    @apply p-4 bg-red-100 text-red-800 mb-6;
-
-    h2 {
-      @apply font-bold
-    }
-
-    ul {
-      @apply list-disc list-inside
-    }
+  ul {
+    @apply list-disc list-inside
   }
 }
+
+.notice {
+  @apply p-4 bg-green-100 text-green-800;
+}
+
+.alert {
+  @apply p-4 bg-yellow-100 text-yellow-800;
+}
+
 
 .pagy {
   @apply flex space-x-1 font-semibold text-sm text-gray-500;

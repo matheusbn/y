@@ -1,0 +1,28 @@
+<div class="flex h-screen">
+  <div class="w-full bg-gray-100  flex items-center justify-center">
+    <div class="max-w-md w-full p-6">
+      <h1 class="text-3xl font-semibold mb-6 text-black text-center">Esqueceu sua senha?</h1>
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        <div class="space-y-4 mb-2">
+          <div class="field">
+            <%= f.label :email, class: "block text-sm font-medium text-gray-700" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300" %>
+          </div>
+          <div class="actions">
+            <%= f.submit "Enviar instruções de recuperação", class: "btn-primary w-full mt-4" %>
+          </div>
+        </div>
+      <% end %>
+      <div class="mt-5 flex items-center justify-center">
+        <%- if devise_mapping.database_authenticatable? %>
+          <%= link_to "Entrar", new_session_path(resource_name), class: "text-gray-700 text-center hover:underline" %>
+        <% end %>
+        <div class="h-1 w-1 mx-5 rounded-full bg-black"></div>
+        <%- if devise_mapping.registerable? %>
+          <%= link_to "Criar conta", new_user_registration_path, class: "text-gray-700 text-center hover:underline"%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

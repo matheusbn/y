@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :patients, controllers: {
+    sessions: "patients/sessions"
+  }
+  devise_for :users, controllers: {
+    sessions: "patients/sessions"
+  }
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -13,6 +18,7 @@ Rails.application.routes.draw do
   # delete "/blog_posts/:id", to: "blog_posts#destroy"
   # post "/blog_posts", to: "blog_posts#create", as: :blog_posts
 
+  resources :home, only: [:index]
   resources :blog_posts do
     resource :cover_image, only: [:destroy], module: :blog_posts
   end
